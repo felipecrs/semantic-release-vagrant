@@ -1,0 +1,29 @@
+{
+  "name": "semantic-release-vagrant",
+  "version": "1.0.0",
+  "description": "semantic-release plugin to publish boxes to Vagrant Cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/felipecassiors/semantic-release-vagrant.git"
+  },
+  "keywords": [
+    "semantic-release",
+    "vagrant"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felipecassiors/semantic-release-vagrant/issues"
+  },
+  "homepage": "https://github.com/felipecassiors/semantic-release-vagrant#readme",
+  "devDependencies": {
+    "@semantic-release/error": "^2.2.0",
+    "execa": "^4.0.0"
+  },
+  "dependencies": {
+    "@fast-csv/parse": "^4.0.2"
+  }
+}
