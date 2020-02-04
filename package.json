@@ -24,6 +24,7 @@
     "execa": "^4.0.0"
   },
   "dependencies": {
-    "@fast-csv/parse": "^4.0.2"
+    "@fast-csv/parse": "^4.0.2",
+    "aggregate-error": "^3.0.1"
   }
 }
