@@ -19,12 +19,9 @@
     "url": "https://github.com/felipecassiors/semantic-release-vagrant/issues"
   },
   "homepage": "https://github.com/felipecassiors/semantic-release-vagrant#readme",
-  "devDependencies": {
-    "@semantic-release/error": "^2.2.0",
-    "execa": "^4.0.0"
-  },
   "dependencies": {
-    "@fast-csv/parse": "^4.0.2",
-    "aggregate-error": "^3.0.1"
+    "@semantic-release/error": "^2.2.0",
+    "aggregate-error": "^3.0.1",
+    "execa": "^4.0.0"
   }
 }
