@@ -25,7 +25,7 @@ async function prepare(pluginConfig, context) {
     throw new AggregateError(errors);
   }
 
-  await prepareApm(pluginConfig, context);
+  await prepareApm(context);
 
   prepared = true;
 }
