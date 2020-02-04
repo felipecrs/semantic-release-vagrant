@@ -1,22 +1,15 @@
 /* eslint require-atomic-updates: off */
 
-const AggregateError = require('aggregate-error');
-const getPkg = require('./lib/get-pkg');
-const verifyApm = require('./lib/verify');
-const prepareApm = require('./lib/prepare');
-const publishApm = require('./lib/publish');
+const AggregateError = require("aggregate-error");
+const verifyApm = require("./lib/verify");
+const prepareApm = require("./lib/prepare");
+const publishApm = require("./lib/publish");
 
 let verified;
 let prepared;
 
 async function verifyConditions(pluginConfig, context) {
   const errors = await verifyApm(pluginConfig, context);
-
-  try {
-    await getPkg(pluginConfig, context);
-  } catch (error) {
-    errors.push(...error);
-  }
 
   if (errors.length > 0) {
     throw new AggregateError(errors);
@@ -28,12 +21,6 @@ async function verifyConditions(pluginConfig, context) {
 async function prepare(pluginConfig, context) {
   const errors = verified ? [] : await verifyApm(pluginConfig, context);
 
-  try {
-    await getPkg(pluginConfig, context);
-  } catch (error) {
-    errors.push(...error);
-  }
-
   if (errors.length > 0) {
     throw new AggregateError(errors);
   }
@@ -44,14 +31,7 @@ async function prepare(pluginConfig, context) {
 }
 
 async function publish(pluginConfig, context) {
-  let pkg;
   const errors = verified ? [] : await verifyApm(pluginConfig, context);
-
-  try {
-    pkg = await getPkg(pluginConfig, context);
-  } catch (error) {
-    errors.push(...error);
-  }
 
   if (errors.length > 0) {
     throw new AggregateError(errors);
@@ -62,7 +42,7 @@ async function publish(pluginConfig, context) {
     prepared = true;
   }
 
-  return publishApm(pluginConfig, pkg, context);
+  return publishApm(pluginConfig, context);
 }
 
-module.exports = {verifyConditions, prepare, publish};
+module.exports = { verifyConditions, prepare, publish };
