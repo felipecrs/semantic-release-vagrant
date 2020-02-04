@@ -1,6 +1,6 @@
 {
   "name": "semantic-release-vagrant",
-  "version": "1.0.1-7",
+  "version": "1.0.0-beta.0",
   "description": "semantic-release plugin to publish boxes to Vagrant Cloud",
   "main": "index.js",
   "scripts": {
