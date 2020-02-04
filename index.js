@@ -38,7 +38,7 @@ async function publish(pluginConfig, context) {
   }
 
   if (!prepared) {
-    await prepareApm(pluginConfig, context);
+    await prepareApm(context);
     prepared = true;
   }
 
